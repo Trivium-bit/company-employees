@@ -1,26 +1,20 @@
 .input:focus {
   outline: none;
-  border:rgb(40, 143, 228) solid 2px;
+  caret-color: #6534FF;
+  font-size: 15px;
 }
 
 .superInput {
-  font-size: 12px;
-  font-family: inherit;
-  background-color: rgb(126, 176, 185);
-  border-radius: 5px;
-  width: 300px
-
-}
-
-.errorInput {
-  font-size: 12px;
-  font-family: inherit;
-  background-color: rgb(216, 108, 100);
-  border: 1px solid;
-  border-radius: 5px;
-  width: 300px
-}
-
-.error {
-  color: rgb(212, 40, 40);
+  padding-left: 10px;
+  border: none;
+  background-color: #F7F7F8;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: #050510;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 }
