@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css'
-import DetailsPage from './components/detailsPage/DetailsPage';
-import ErrorsPage from './components/errorsPage/ErrorsPage';
-import HomePage from './components/homePage/HomePage';
+import DetailsPage from './components/DetailsPage/DetailsPage';
+import ErrorsPage from './components/ErrorsPage/ErrorsPage';
+import HomePage from './components/HomePage/HomePage';
 
 function App() {
   return (

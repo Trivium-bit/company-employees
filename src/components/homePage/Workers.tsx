@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SearchBar() {
+function Workers() {
   return (
     <div>
    
@@ -8,4 +8,4 @@ function SearchBar() {
   );
 }
 
-export default SearchBar;
+export default Workers;

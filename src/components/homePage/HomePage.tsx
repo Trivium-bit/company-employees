@@ -1,15 +1,16 @@
 import React from 'react';
-import ListOfWorkers from './ListOfWorkers';
-import SearchBar from './SearchBar';
+import SearchBar from './SearchBar/SearchBar';
+import style from './HomePage.module.css' 
+import Workers from './Workers';
 import TabBar from './TabBar';
 
 function HomePage() {
   return (
     <div className="">
-    <div className='h2'> Поиск </div>
+    <div className={style.search}> Поиск </div>
      <SearchBar/>
      <TabBar/>
-     <ListOfWorkers/>
+     <Workers/>
     </div>
   );
 }
