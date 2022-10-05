@@ -1,10 +1,12 @@
-const initState = {
-    department: "Все"
+import { usersAPI, UserType } from "../api/api";
+
+const initialState = {
+    department: "Все",
 };
 
-export const departmentsReducer = (state = initState, action: ActionsType): typeof initState => {
+export const departmentsReducer = (state = initialState, action: ActionsType): typeof initialState => {
     switch (action.type) {
-        case 'CHANGE-THEME': {
+        case 'CHANGE-DEPARTMENT': {
             return {
                 ...state,
                 department: action.department
@@ -14,12 +16,11 @@ export const departmentsReducer = (state = initState, action: ActionsType): type
     }
 };
 
-type ActionsType = isChangeDepartmentType
+type ActionsType = changeDepartmentActionType
  
 export type DepartmentType = 'Все' | 'Designers' | 'Analysts' | 'Managers' | 'iOS' |  'Android'
 
-type isChangeDepartmentType = {
-    type: 'CHANGE-THEME'
-    department: DepartmentType
-}
-export const changeDepartmentAC = (department: DepartmentType): isChangeDepartmentType => ({ type: 'CHANGE-THEME', department } as const);
+export type changeDepartmentActionType = ReturnType<typeof changeDepartmentAC>;
+
+//actionCreater
+export const changeDepartmentAC = (department: DepartmentType) => ({ type: 'CHANGE-DEPARTMENT', department } as const);

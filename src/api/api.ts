@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { DepartmentType } from '../redux/departmentsReducer';
 
 /* const settings = {
     withCredentials: true,
@@ -12,25 +13,25 @@ const instance = axios.create({
 })
 
 export const usersAPI = {
-    getAllUsers() {
-        const promise = instance.get<ResponseType>('/users?__example=all');
+    getUsers() {
+        const promise = instance.get<ResponseType>('/users');
         return promise;
     },
 }
 
 // types
 export type ResponseType = {
-    items: [
-        {
-            id: string,
-            avatarUrl: string,
-            firstName: string,
-            lastName: string,
-            userTag: string,
-            department: string,
-            position: string,
-            birthday: string,
-            phone: string
-        }
-    ]
+    items: Array<UserType>
+}
+
+export type UserType = {
+    id: string,
+    avatarUrl: string,
+    firstName: string,
+    lastName: string,
+    userTag: string,
+    department: string,
+    position: string,
+    birthday: string,
+    phone: string
 }
