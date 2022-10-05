@@ -1,7 +1,6 @@
 import React from 'react';
 import SearchBar from './SearchBar/SearchBar';
 import style from './HomePage.module.css' 
-import Workers from './Workers';
 import TabBar from './TabBar';
 
 function HomePage() {
@@ -10,7 +9,6 @@ function HomePage() {
     <div className={style.search}> Поиск </div>
      <SearchBar/>
      <TabBar/>
-     <Workers/>
     </div>
   );
 }

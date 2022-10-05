@@ -1,0 +1,27 @@
+.tabBar {
+    padding-top: 22px;
+    display: flex;
+    align-items: center;
+}
+.button {
+    border: none;
+    background-image: none;
+    background: transparent;
+    background-color: transparent;
+    color: #97979B;
+    margin-right: 20px;
+    outline: 0 none;
+    height: 28px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+}
+.button:hover {
+    background-color: rgb(255, 243, 204);
+} 
+.button.active {
+    font-weight: 600;
+    color: #050510;
+}

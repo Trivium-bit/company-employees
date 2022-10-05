@@ -1,11 +1,14 @@
 import React from 'react';
+import { DepartmentType } from './TabBar';
+
 
 function Workers() {
+
   return (
-    <div>
-   
+    <div className="">
+
     </div>
+
   );
 }
-
 export default Workers;
