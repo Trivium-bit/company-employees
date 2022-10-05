@@ -1,20 +1,24 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeDepartmentAC, DepartmentType } from '../../redux/departmentsReducer';
+import { AppStoreType } from '../../redux/store';
 import style from './TabBar.module.css'
 import Workers from './Workers';
 
-export type DepartmentType = 'Все' | 'Designers' | 'Analysts' | 'Managers' | 'iOS' | 'Android';
-
 function TabBar() {
 
-  const [department, setDepartment] = useState<DepartmentType>('Все')
+  const department = useSelector<AppStoreType, string>(state => state.departments.department);
+  const dispatch = useDispatch();
+  const onChangeDepartment = (department: DepartmentType) => dispatch(changeDepartmentAC(department));
 
-  const setAll = () => { setDepartment('Все') }
-  const setDesigners = () => { setDepartment('Designers') }
-  const setAnalysts = () => { setDepartment('Analysts') }
-  const setManagers = () => { setDepartment('Managers') }
-  const setiOS = () => { setDepartment('iOS') }
-  const setAndroid = () => { setDepartment('Android') }
+  const setAll = () => { onChangeDepartment('Все') }
+  const setDesigners = () => { onChangeDepartment('Designers') }
+  const setAnalysts = () => { onChangeDepartment('Analysts') }
+  const setManagers = () => { onChangeDepartment('Managers') }
+  const setiOS = () => { onChangeDepartment('iOS') }
+  const setAndroid = () => { onChangeDepartment('Android') }
 
+  //className for buttons
   const onAll = style.button + ' ' + (department === "Все" ? style.active : '')
   const onDesigners = style.button + ' ' + (department === "Designers" ? style.active : '')
   const onAnalysts = style.button + ' ' + (department === "Analysts" ? style.active : '')
