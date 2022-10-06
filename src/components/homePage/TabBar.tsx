@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { changeDepartmentAC, DepartmentType } from '../../redux/departmentsReducer';
 import { AppStoreType } from '../../redux/store';
 import style from './TabBar.module.css'
-import Workers from './Workers';
+import Users from './Users';
 
 function TabBar() {
 
@@ -36,7 +36,7 @@ function TabBar() {
         <button onClick={setiOS} className={oniOS}>iOS</button>
         <button onClick={setAndroid} className={onAndroid}>Android</button>
       </div>
-      <Workers />
+      <Users />
     </div>
   )
 }

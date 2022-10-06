@@ -4,7 +4,7 @@ const initialState = {
     department: "Все",
 };
 
-export const departmentsReducer = (state = initialState, action: ActionsType): typeof initialState => {
+export const departmentsReducer = (state = initialState, action: DepartmentsActionsType): typeof initialState => {
     switch (action.type) {
         case 'CHANGE-DEPARTMENT': {
             return {
@@ -16,7 +16,7 @@ export const departmentsReducer = (state = initialState, action: ActionsType): t
     }
 };
 
-type ActionsType = changeDepartmentActionType
+export type DepartmentsActionsType = changeDepartmentActionType
  
 export type DepartmentType = 'Все' | 'Designers' | 'Analysts' | 'Managers' | 'iOS' |  'Android'
 
