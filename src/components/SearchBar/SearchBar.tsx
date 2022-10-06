@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import style from './SearchBar.module.css'
 import { Icon } from '@iconify/react';
-import Input from '../../Input/Input';
+import Input from '../Input/Input';
 
 function SearchBar() {
   return (

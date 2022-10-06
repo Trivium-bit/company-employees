@@ -1,15 +1,15 @@
 import React from 'react';
 import './App.css'
-import DetailsPage from './components/DetailsPage/DetailsPage';
-import ErrorsPage from './components/ErrorsPage/ErrorsPage';
-import HomePage from './components/HomePage/HomePage';
+import DetailsPage from './pages/DetailsPage/DetailsPage';
+import ErrorsPage from './pages/ErrorsPage/ErrorsPage';
+import HomePage from './pages/MainPage/MainPage';
 
 function App() {
   return (
     <div className="App">
-      <HomePage/>
-      <DetailsPage/>
-      <ErrorsPage/>
+      <HomePage />
+      <DetailsPage />
+      <ErrorsPage />
     </div>
   );
 }

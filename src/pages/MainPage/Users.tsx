@@ -34,7 +34,6 @@ function Users() {
             </div>
           })
         }
-
       </div>
     </>
   )

@@ -2,8 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeDepartmentAC, DepartmentType } from '../../redux/departmentsReducer';
 import { AppStoreType } from '../../redux/store';
-import style from './TabBar.module.css'
-import Users from './Users';
+import style from './TabBar.module.css';
 
 function TabBar() {
 
@@ -11,20 +10,20 @@ function TabBar() {
   const dispatch = useDispatch();
   const onChangeDepartment = (department: DepartmentType) => dispatch(changeDepartmentAC(department));
 
-  const setAll = () => { onChangeDepartment('all') }
-  const setDesigners = () => { onChangeDepartment('design') }
-  const setAnalysts = () => { onChangeDepartment('analytics') }
-  const setManagers = () => { onChangeDepartment('management') }
-  const setiOS = () => { onChangeDepartment('ios') }
-  const setAndroid = () => { onChangeDepartment('android') }
+  const setAll = () => { onChangeDepartment('all') };
+  const setDesigners = () => { onChangeDepartment('design') };
+  const setAnalysts = () => { onChangeDepartment('analytics') };
+  const setManagers = () => { onChangeDepartment('management') };
+  const setiOS = () => { onChangeDepartment('ios') };
+  const setAndroid = () => { onChangeDepartment('android') };
 
   //className for buttons
-  const onAll = style.button + ' ' + (department === "all" ? style.active : '')
-  const onDesigners = style.button + ' ' + (department === "design" ? style.active : '')
-  const onAnalysts = style.button + ' ' + (department === "analytics" ? style.active : '')
-  const onManagers = style.button + ' ' + (department === "management" ? style.active : '')
+  const onAll = style.button + ' ' + (department === "all" ? style.active : '');
+  const onDesigners = style.button + ' ' + (department === "design" ? style.active : '');
+  const onAnalysts = style.button + ' ' + (department === "analytics" ? style.active : '');
+  const onManagers = style.button + ' ' + (department === "management" ? style.active : '');
   const oniOS = style.button + ' ' + (department === "ios" ? style.active : '')
-  const onAndroid = style.button + ' ' + (department === "android" ? style.active : '')
+  const onAndroid = style.button + ' ' + (department === "android" ? style.active : '');
 
   return (
     <div>
@@ -36,7 +35,6 @@ function TabBar() {
         <button onClick={setiOS} className={oniOS}>iOS</button>
         <button onClick={setAndroid} className={onAndroid}>Android</button>
       </div>
-      <Users />
     </div>
   )
 }
