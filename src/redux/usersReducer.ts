@@ -1,4 +1,5 @@
 import { usersAPI, UserType } from "../api/api";
+import { DepartmentType } from "./departmentsReducer";
 import { AppThunkDispatch } from "./store";
 
 const initialState: Array<UserType> = []
@@ -20,8 +21,8 @@ export type setUsersActionType = ReturnType<typeof setUsersAC>;
 export const setUsersAC = (users: Array<UserType>) => ({ type: 'SET-USERS', users } as const);
 
 // thunks
-export const setUsersTC = () =>(dispatch:AppThunkDispatch) => {
-    usersAPI.getUsers()
+export const setUsersTC = (__example: DepartmentType) =>(dispatch:AppThunkDispatch) => {
+    usersAPI.getUsers(__example)
         .then((res) =>{
             dispatch(setUsersAC(res.data.items));
         })

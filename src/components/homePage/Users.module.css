@@ -1,3 +1,6 @@
 .users {
-    border: solid green;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    width: 500px;
 }

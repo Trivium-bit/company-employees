@@ -6,14 +6,14 @@ const instance = axios.create({
 })
 
 export const usersAPI = {
-    getUsers() {
-        const promise = instance.get<ResponseType>('/users');
+    getUsers(__example: DepartmentType) {
+        const promise = instance.get<ResponseType>(`/users?__example=${__example}`);
         return promise;
     },
 }
 
 // types
-type ResponseType <D = {}> = {
+type ResponseType = {
   items: UserType[]
 }
 export type UserType = {
