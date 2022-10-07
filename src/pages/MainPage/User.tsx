@@ -3,6 +3,7 @@ import style from './User.module.css'
 import foto from '../../assets/react.png';
 import { useAppSelector } from '../../redux/store';
 
+
 type UserPropsType = {
   avatarUrl: string,
   firstName: string,

@@ -1,9 +1,11 @@
 interface CounterState {
     department: DepartmentType
+    __dynamic: boolean
   }
 
 const initialState: CounterState = {
     department: "all",
+    __dynamic: true,
 };
 
 export const departmentsReducer = (state = initialState, action: DepartmentsActionsType): typeof initialState => {

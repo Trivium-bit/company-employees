@@ -1,23 +1,13 @@
 import React, { useEffect } from 'react';
-import { setAppStatusAC } from '../../redux/app-reducer';
 import { useAppDispatch, useAppSelector } from '../../redux/store';
 import { setUsersTC } from '../../redux/users-reducer';
 import User from './User';
 import style from './Users.module.css';
 
-
 function Users() {
 
-  const dispatch = useAppDispatch()
   const users = useAppSelector(state => state.users);
-  const department = useAppSelector(state => state.departments.department)
-
-  useEffect(() => {
-    dispatch(setAppStatusAC('loading'))
-    dispatch(setUsersTC(department))
-  }, [department])
-
-  return (
+    return (
     <>
       <div className={style.users}>
         {
@@ -39,6 +29,6 @@ function Users() {
       </div>
     </>
   )
-}
+      }
 
 export default Users;

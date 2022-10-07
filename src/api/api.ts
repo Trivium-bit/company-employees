@@ -6,8 +6,8 @@ const instance = axios.create({
 })
 
 export const usersAPI = {
-    getUsers(__example: DepartmentType) {
-        const promise = instance.get<ResponseType>(`/users?__example=${__example}`);
+    getUsers(__example: DepartmentType, __code: string, __dynamic: boolean) {
+        const promise = instance.get<ResponseType>(`/users?__example=${__example}&__code=${__code}&__dynamic=${__dynamic}`);
         return promise;
     },
 }

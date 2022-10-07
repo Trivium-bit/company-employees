@@ -1,5 +1,5 @@
 import { usersAPI, UserType } from "../api/api";
-import { setAppStatusAC } from "./app-reducer";
+import { setAppErrorAC, setAppStatusAC } from "./app-reducer";
 import { DepartmentType } from "./departments-reducer";
 import { AppThunkDispatch } from "./store";
 
@@ -22,14 +22,16 @@ export type setUsersActionType = ReturnType<typeof setUsersAC>;
 export const setUsersAC = (users: Array<UserType>) => ({ type: 'SET-USERS', users } as const);
 
 // thunks
-export const setUsersTC = (__example: DepartmentType) =>(dispatch:AppThunkDispatch) => {
+export const setUsersTC = (__example: DepartmentType, __code: string, __dynamic: boolean) =>(dispatch:AppThunkDispatch) => {
     dispatch(setAppStatusAC('loading'))
-    usersAPI.getUsers(__example)
+    usersAPI.getUsers(__example, __code, __dynamic)
         .then((res) =>{
             dispatch(setUsersAC(res.data.items));
             dispatch(setAppStatusAC('succeeded'))
         })
         .catch((error) => {
-
-        })
+           console.log(error.message)
+           dispatch(setAppErrorAC(error.message))
+           dispatch(setAppStatusAC('failed'))
+        }) 
 }

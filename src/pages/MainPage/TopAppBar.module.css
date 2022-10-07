@@ -2,7 +2,6 @@
 
 .search {
     padding-top: 16px;
-
     width: 76px;
     height: 28px;
     font-family: 'Inter', sans-serif;
@@ -11,5 +10,9 @@
     font-size: 24px;
     line-height: 28px;
     color: #050510;
+}
 
+.hr {
+	height: 0.33px;
+	color:  #C3C3C6;
 }
