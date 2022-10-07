@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeDepartmentAC, DepartmentType } from '../../redux/departmentsReducer';
+import { changeDepartmentAC, DepartmentType } from '../../redux/departments-reducer';
 import { AppStoreType } from '../../redux/store';
 import style from './TabBar.module.css';
 

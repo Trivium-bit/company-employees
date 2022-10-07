@@ -1,19 +1,21 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
-import { DepartmentsActionsType, departmentsReducer } from './departmentsReducer';
-import { UsersActionsType, usersReducer } from './usersReducer';
+import { DepartmentsActionsType, departmentsReducer } from './departments-reducer';
 import thunkMiddleware, {ThunkDispatch} from 'redux-thunk'
 import { useDispatch } from 'react-redux';
 import { TypedUseSelectorHook } from 'react-redux';
 import { useSelector } from 'react-redux';
+import { UsersActionsType, usersReducer } from './users-reducer';
+import { AppActionsType, appReducer } from './app-reducer';
 
 const rootReducer = combineReducers({
    departments: departmentsReducer,
-   users: usersReducer
+   users: usersReducer,
+   app: appReducer
 })
 
 export const store = createStore(rootReducer, applyMiddleware(thunkMiddleware))
 
-export type RootActionsType = UsersActionsType | DepartmentsActionsType
+export type RootActionsType = UsersActionsType | DepartmentsActionsType | AppActionsType
     
 export type AppThunkDispatch = ThunkDispatch<AppStoreType, null, RootActionsType>;
 export type AppStoreType = ReturnType<typeof rootReducer>;

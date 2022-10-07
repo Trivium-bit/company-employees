@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
+import { setAppStatusAC } from '../../redux/app-reducer';
 import { useAppDispatch, useAppSelector } from '../../redux/store';
-import { setUsersTC } from '../../redux/usersReducer';
+import { setUsersTC } from '../../redux/users-reducer';
 import User from './User';
 import style from './Users.module.css';
 
@@ -12,6 +13,7 @@ function Users() {
   const department = useAppSelector(state => state.departments.department)
 
   useEffect(() => {
+    dispatch(setAppStatusAC('loading'))
     dispatch(setUsersTC(department))
   }, [department])
 

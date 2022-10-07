@@ -1,5 +1,6 @@
 import { usersAPI, UserType } from "../api/api";
-import { DepartmentType } from "./departmentsReducer";
+import { setAppStatusAC } from "./app-reducer";
+import { DepartmentType } from "./departments-reducer";
 import { AppThunkDispatch } from "./store";
 
 const initialState: Array<UserType> = []
@@ -22,18 +23,13 @@ export const setUsersAC = (users: Array<UserType>) => ({ type: 'SET-USERS', user
 
 // thunks
 export const setUsersTC = (__example: DepartmentType) =>(dispatch:AppThunkDispatch) => {
+    dispatch(setAppStatusAC('loading'))
     usersAPI.getUsers(__example)
         .then((res) =>{
             dispatch(setUsersAC(res.data.items));
+            dispatch(setAppStatusAC('succeeded'))
+        })
+        .catch((error) => {
+
         })
 }
-
-/* export const fetchUsersTC = () => {
-    return (dispatch: AppStoreType) => {
-        usersAPI.getUsers()
-            .then((res) => {
-                dispatch(setUsersAC(res.data.items))
-                return res.data.items
-            })
-    }
-} */

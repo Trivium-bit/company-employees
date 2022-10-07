@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { DepartmentType } from '../redux/departmentsReducer';
+import { DepartmentType } from '../redux/departments-reducer';
 
 const instance = axios.create({
     baseURL: 'https://stoplight.io/mocks/kode-frontend-team/koder-stoplight/86566464',
@@ -11,9 +11,8 @@ export const usersAPI = {
         return promise;
     },
 }
-
 // types
-type ResponseType = {
+export type ResponseType = {
   items: UserType[]
 }
 export type UserType = {
