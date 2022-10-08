@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../redux/store';
-import { setUsersTC } from '../../redux/users-reducer';
+import React from 'react';
+import { useAppSelector } from '../../redux/store';
 import User from './User';
 import style from './Users.module.css';
 
 function Users() {
 
   const users = useAppSelector(state => state.users);
+  
     return (
     <>
       <div className={style.users}>
