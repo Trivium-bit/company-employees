@@ -22,9 +22,9 @@ export type setUsersActionType = ReturnType<typeof setUsersAC>;
 export const setUsersAC = (users: Array<UserType>) => ({ type: 'SET-USERS', users } as const);
 
 // thunks
-export const setUsersTC = (__example: DepartmentType, __code: string, __dynamic: boolean) =>(dispatch:AppThunkDispatch) => {
+export const setUsersTC = (__example: DepartmentType, __dynamic: boolean) =>(dispatch:AppThunkDispatch) => {
     dispatch(setAppStatusAC('loading'))
-    usersAPI.getUsers(__example, __code, __dynamic)
+    usersAPI.getUsers(__example, __dynamic)
         .then((res) =>{
             dispatch(setUsersAC(res.data.items));
             dispatch(setAppStatusAC('succeeded'))

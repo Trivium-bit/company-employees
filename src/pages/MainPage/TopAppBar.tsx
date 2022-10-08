@@ -6,10 +6,10 @@ import style from './TopAppBar.module.css';
 function TopAppBar() {
   return (
     <div className="">
-    <div className={style.search}> Поиск </div>
-     <SearchBar/>
-     <TabBar/>
-     <hr className={style.hr}></hr>
+      <div className={style.search}> Поиск </div>
+      <SearchBar />
+      <TabBar />
+      <hr className={style.hr}></hr>
     </div>
   );
 }
