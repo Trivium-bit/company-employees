@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css'
+import ErrorPage from './pages/MainPage/ErrorPage';
 import MainPage from './pages/MainPage/MainPage';
 import UserСontactsPage from './pages/UserСontactsPage/UserСontactsPage';
 
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path={PATH.MAIN_PAGE} element={<MainPage />} />
         <Route path={PATH.USER_СONTACTS_PAGE} element={<UserСontactsPage />} />
+        <Route path={PATH.ERROR_PAGE} element={<ErrorPage />} />
         <Route path={PATH.ANY_ROUTE} element={<Navigate to={PATH.ERROR_PAGE}/>} />
       </Routes>
     </>

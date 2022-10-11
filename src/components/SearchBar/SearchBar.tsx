@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import style from './SearchBar.module.css'
 import { Icon } from '@iconify/react';
 import Input from '../Input/Input';
 
+
 function SearchBar() {
+
+
   return (
     <div className={style.searchLine}>
       <div className={style.search}>

@@ -1,0 +1,10 @@
+.userContactsPage {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.avaName {
+  display: flex;
+  flex-direction: column;
+}
