@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes, useParams } from 'react-router-dom';
 import './App.css'
 import ErrorPage from './pages/MainPage/ErrorPage';
 import MainPage from './pages/MainPage/MainPage';
@@ -7,20 +7,18 @@ import UserСontactsPage from './pages/UserСontactsPage/UserСontactsPage';
 
 export const PATH = {
   MAIN_PAGE: "/",
-  USER_СONTACTS_PAGE: "/user-contacts-page",
+  USER_PAGE: "/users/:userId",
   ERROR_PAGE: "/error-page",
-  ANY_ROUTE: "*"
-
 }
 
 function App() {
+
   return (
     <>
       <Routes>
         <Route path={PATH.MAIN_PAGE} element={<MainPage />} />
-        <Route path={PATH.USER_СONTACTS_PAGE} element={<UserСontactsPage />} />
+        <Route path={PATH.USER_PAGE} element={<UserСontactsPage />} />
         <Route path={PATH.ERROR_PAGE} element={<ErrorPage />} />
-        <Route path={PATH.ANY_ROUTE} element={<Navigate to={PATH.ERROR_PAGE}/>} />
       </Routes>
     </>
   );

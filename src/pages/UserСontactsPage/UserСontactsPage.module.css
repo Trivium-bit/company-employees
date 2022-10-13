@@ -1,10 +1,94 @@
 .userContactsPage {
   display: flex;
   flex-direction: column;
-
+  width: 100%;
 }
 
-.avaName {
+.grayArea {
+  background-color: #F7F7F8;
+  width: 100%;
+  min-height: 40vh;
   display: flex;
   flex-direction: column;
+}
+
+.backBtn {
+  margin: 40px;
+}
+
+.backBtn:hover {
+  color: blueviolet;
+  transform: scale(1.2)
+}
+
+.userDescription {
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 200px;
+}
+
+.ava {
+  display: flex;
+  flex-direction: column;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.name {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #050510;
+}
+
+.department {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  color: #55555C;
+}
+
+.birthDay {
+  display: flex;
+  align-items: flex-start;
+}
+
+.age {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+}
+
+.birthday {
+  margin-left: 10px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #050510;
+}
+
+.call {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+}
+
+.phoneNumber {
+  margin-left: 10px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #050510;
 }

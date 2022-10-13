@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useAppSelector } from '../../redux/store';
 import Users from './Users';
 import style from './UsersContainer.module.css';
@@ -23,6 +25,7 @@ function UsersContainer() {
                 birthday={u.birthday}
                 phone={u.phone}
                 id={u.id}
+                
               />
             </div>
           })

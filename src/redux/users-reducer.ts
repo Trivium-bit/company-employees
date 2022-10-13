@@ -26,27 +26,18 @@ export const usersReducer = (state: InitialStateType = initialState, action: Use
                     item.firstName.toLowerCase().includes(action.firstName.toLowerCase())
                 )
             };
-            case "FILTER-USER-TAG":
-                return {
-                    ...state,
-                    users: [...state.users].filter((item) =>
-                        item.lastName.toLowerCase().includes(action.lastName.toLowerCase())
-                    )
-                };
         default: return state;
     }
 }
 
-export type UsersActionsType = SetUsersActionType | FilterUsersActionType | FilterUserTagActionType
+export type UsersActionsType = SetUsersActionType | FilterUsersActionType
 
 export type SetUsersActionType = ReturnType<typeof setUsersAC>;
 export type FilterUsersActionType = ReturnType<typeof filterUsersAC>;
-export type FilterUserTagActionType = ReturnType<typeof filterUserTagAC>;
 
 //actionCreater
 export const setUsersAC = (users: Array<UserType>) => ({ type: 'SET-USERS', users } as const);
 export const filterUsersAC = (firstName: string) => ({ type: "FILTER-USERS", firstName } as const)
-export const filterUserTagAC = (lastName: string) => ({ type: "FILTER-USER-TAG", lastName } as const)
 
 // thunks
 export const setUsersTC = (__example: DepartmentType, __dynamic: boolean) => (dispatch: AppThunkDispatch) => {
