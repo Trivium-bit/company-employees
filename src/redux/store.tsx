@@ -1,6 +1,6 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { DepartmentsActionsType, departmentsReducer } from './departments-reducer';
-import thunkMiddleware, {ThunkDispatch} from 'redux-thunk'
+import thunkMiddleware, { ThunkDispatch } from 'redux-thunk'
 import { useDispatch } from 'react-redux';
 import { TypedUseSelectorHook } from 'react-redux';
 import { useSelector } from 'react-redux';
@@ -10,13 +10,13 @@ import { AppActionsType, appReducer } from './app-reducer';
 const rootReducer = combineReducers({
    departments: departmentsReducer,
    users: usersReducer,
-   app: appReducer
+   app: appReducer,
 })
 
 export const store = createStore(rootReducer, applyMiddleware(thunkMiddleware))
 
 export type RootActionsType = UsersActionsType | DepartmentsActionsType | AppActionsType
-    
+
 export type AppThunkDispatch = ThunkDispatch<AppStoreType, null, RootActionsType>;
 export type AppStoreType = ReturnType<typeof rootReducer>;
 export const useAppSelector: TypedUseSelectorHook<AppStoreType> = useSelector;

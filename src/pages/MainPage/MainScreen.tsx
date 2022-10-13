@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../redux/store';
 import { setUsersTC } from '../../redux/users-reducer';
 import ErrorPage from './ErrorPage';
-import Users from './Users';
+import UsersContainer from './UsersContainer';
 
 function MainScreen() {
 
@@ -22,7 +22,7 @@ function MainScreen() {
     )
   } else {
     return (
-      <Users />
+      <UsersContainer />
     );
   }
 }

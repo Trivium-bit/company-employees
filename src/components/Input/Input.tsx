@@ -1,4 +1,6 @@
 import React, { ChangeEvent, DetailedHTMLProps, Dispatch, InputHTMLAttributes, KeyboardEvent, SetStateAction } from "react";
+import { useDispatch } from "react-redux";
+import { filterUsersAC, filterUserTagAC } from "../../redux/users-reducer";
 import s from "./Input.module.css";
 
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
@@ -21,9 +23,13 @@ const Input: React.FC<SuperInputTextPropsType> = (
         ...restProps
     }
 ) => {
+    const dispatch = useDispatch()
+    
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
         onChange && onChange(e.currentTarget.value);
         onChangeText && onChangeText(e.currentTarget.value);
+
+        dispatch(filterUserTagAC(e.target.value))
     }
     const onKeyPressCallback = (e: KeyboardEvent<HTMLInputElement>) => {
         onKeyPress && onKeyPress(e);

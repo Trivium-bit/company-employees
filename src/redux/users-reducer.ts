@@ -3,26 +3,53 @@ import { setAppErrorAC, setAppStatusAC } from "./app-reducer";
 import { DepartmentType } from "./departments-reducer";
 import { AppStoreType, AppThunkDispatch } from "./store";
 
-const initialState: Array<UserType> = []
+type InitialStateType = {
+    users: Array<UserType>
+}
 
-export const usersReducer = (state = initialState, action: UsersActionsType): typeof initialState => {
+const initialState: InitialStateType = {
+    users: [],
+}
+
+export const usersReducer = (state: InitialStateType = initialState, action: UsersActionsType): InitialStateType => {
     switch (action.type) {
         case 'SET-USERS': {
-            return action.users.map(u => ({ ...u }))
+            return {
+                ...state,
+                users: action.users.map(u => ({ ...u }))
+            }
         }
+        case "FILTER-USERS":
+            return {
+                ...state,
+                users: [...state.users].filter((item) =>
+                    item.firstName.toLowerCase().includes(action.firstName.toLowerCase())
+                )
+            };
+            case "FILTER-USER-TAG":
+                return {
+                    ...state,
+                    users: [...state.users].filter((item) =>
+                        item.lastName.toLowerCase().includes(action.lastName.toLowerCase())
+                    )
+                };
         default: return state;
     }
 }
 
-export type UsersActionsType = setUsersActionType
+export type UsersActionsType = SetUsersActionType | FilterUsersActionType | FilterUserTagActionType
 
-export type setUsersActionType = ReturnType<typeof setUsersAC>;
+export type SetUsersActionType = ReturnType<typeof setUsersAC>;
+export type FilterUsersActionType = ReturnType<typeof filterUsersAC>;
+export type FilterUserTagActionType = ReturnType<typeof filterUserTagAC>;
 
 //actionCreater
 export const setUsersAC = (users: Array<UserType>) => ({ type: 'SET-USERS', users } as const);
+export const filterUsersAC = (firstName: string) => ({ type: "FILTER-USERS", firstName } as const)
+export const filterUserTagAC = (lastName: string) => ({ type: "FILTER-USER-TAG", lastName } as const)
 
 // thunks
-export const setUsersTC = (__example: DepartmentType, __dynamic: boolean) => (dispatch: AppThunkDispatch,  getState: () => AppStoreType) => {
+export const setUsersTC = (__example: DepartmentType, __dynamic: boolean) => (dispatch: AppThunkDispatch) => {
     dispatch(setAppStatusAC('loading'))
     usersAPI.getUsers(__example, __dynamic)
         .then((res) => {
