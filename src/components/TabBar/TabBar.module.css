@@ -10,19 +10,22 @@
     background-color: transparent;
     color: #97979B;
     margin-right: 20px;
+    margin-bottom: -8px;
     outline: 0 none;
-    height: 28px;
+    height: 30px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
     font-size: 15px;
     line-height: 20px;
+    border: 2px transparent;
 }
 .button:hover {
     cursor: pointer;
-    color: blueviolet;
+    color: #6534FF;
 } 
 .button.active {
     font-weight: 600;
-    color: blueviolet;
+    color: #050510;
+    border-bottom: 2px solid #6534FF;
 }
