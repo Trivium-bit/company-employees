@@ -1,5 +1,4 @@
 import { Icon } from '@iconify/react';
-import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAppSelector } from '../../redux/store';
 import style from './UserСontactsPage.module.css'

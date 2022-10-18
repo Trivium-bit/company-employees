@@ -1,4 +1,4 @@
-import ufo from './../../assets/ufo.png'
+import ufo from './../../../assets/ufo.png'
 import style from './ErrorPage.module.css'
 
 function ErrorPage() {

@@ -1,5 +1,6 @@
 import MainScreen from "./MainScreen";
-import TopAppBar from "./TopAppBar";
+import TopAppBar from "./TopAppBar/TopAppBar/TopAppBar";
+
 
 function MainPage() {
   return (

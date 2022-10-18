@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../redux/store';
 import { setUsersTC } from '../../redux/users-reducer';
-import ErrorPage from './ErrorPage';
-import UsersContainer from './UsersContainer';
+import ErrorPage from './ErrorPage/ErrorPage';
+
+import UsersContainer from './UsersContainer/UsersContainer';
 
 function MainScreen() {
 

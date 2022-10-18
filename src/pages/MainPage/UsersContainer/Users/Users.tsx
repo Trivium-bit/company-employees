@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Users.module.css'
-import { useAppSelector } from '../../redux/store';
 import { useNavigate } from 'react-router-dom';
+import { useAppSelector } from '../../../../redux/store';
 
 type UserPropsType = {
   id: string

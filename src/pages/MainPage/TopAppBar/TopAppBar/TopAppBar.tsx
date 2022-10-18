@@ -1,6 +1,6 @@
 import React from 'react';
-import SearchBar from '../../components/SearchBar/SearchBar';
-import TabBar from '../../components/TabBar/TabBar';
+import SearchBar from '../SearchBar/SearchBar';
+import TabBar from '../TabBar/TabBar';
 import style from './TopAppBar.module.css';
 
 function TopAppBar() {

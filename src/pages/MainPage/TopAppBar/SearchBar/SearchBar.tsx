@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import style from './SearchBar.module.css'
 import { Icon } from '@iconify/react';
-import Input from '../Input/Input';
+import Input from '../../../../components/Input/Input';
 import { useDispatch } from 'react-redux';
-import { sortUsersAC } from '../../redux/users-reducer';
-import { useAppSelector } from '../../redux/store';
+import { sortUsersAC } from '../../../../redux/users-reducer';
+import { useAppSelector } from '../../../../redux/store';
 
 function SearchBar() {
 

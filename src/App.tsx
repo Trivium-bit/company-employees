@@ -1,7 +1,8 @@
 import React from 'react';
 import { Navigate, Route, Routes, useParams } from 'react-router-dom';
 import './App.css'
-import ErrorPage from './pages/MainPage/ErrorPage';
+import ErrorPage from './pages/MainPage/ErrorPage/ErrorPage';
+
 import MainPage from './pages/MainPage/MainPage';
 import UserСontactsPage from './pages/UserСontactsPage/UserСontactsPage';
 
