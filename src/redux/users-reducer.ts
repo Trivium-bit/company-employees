@@ -5,10 +5,22 @@ import { AppStoreType, AppThunkDispatch } from "./store";
 
 type InitialStateType = {
     users: Array<UserType>
+    user: UserType
 }
 
 const initialState: InitialStateType = {
     users: [],
+    user: {
+        id: '',
+        avatarUrl: '',
+        firstName: '',
+        lastName: '',
+        userTag: '',
+        department: '',
+        position: '',
+        birthday: '',
+        phone: ''
+    }
 }
 
 export const usersReducer = (state: InitialStateType = initialState, action: UsersActionsType): InitialStateType => {
@@ -26,18 +38,27 @@ export const usersReducer = (state: InitialStateType = initialState, action: Use
                     item.firstName.toLowerCase().includes(action.firstName.toLowerCase())
                 )
             };
+        case "SORT-USERS":
+            return {
+                ...state,
+                users: [...state.users].sort((a, b) => {
+                    return a.firstName > b.firstName ? 1 : -1
+                })
+            };
         default: return state;
     }
 }
 
-export type UsersActionsType = SetUsersActionType | FilterUsersActionType
+export type UsersActionsType = SetUsersActionType | FilterUsersActionType | SortUsersActionType
 
 export type SetUsersActionType = ReturnType<typeof setUsersAC>;
 export type FilterUsersActionType = ReturnType<typeof filterUsersAC>;
+export type SortUsersActionType = ReturnType<typeof sortUsersAC>;
 
 //actionCreater
 export const setUsersAC = (users: Array<UserType>) => ({ type: 'SET-USERS', users } as const);
 export const filterUsersAC = (firstName: string) => ({ type: "FILTER-USERS", firstName } as const)
+export const sortUsersAC = (firstName: string) => ({ type: "SORT-USERS", firstName } as const)
 
 // thunks
 export const setUsersTC = (__example: DepartmentType, __dynamic: boolean) => (dispatch: AppThunkDispatch) => {

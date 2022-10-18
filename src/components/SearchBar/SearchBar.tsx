@@ -2,9 +2,18 @@ import React, { useState } from 'react';
 import style from './SearchBar.module.css'
 import { Icon } from '@iconify/react';
 import Input from '../Input/Input';
+import { useDispatch } from 'react-redux';
+import { sortUsersAC } from '../../redux/users-reducer';
+import { useAppSelector } from '../../redux/store';
 
 function SearchBar() {
 
+  const dispatch = useDispatch()
+  const fistName = useAppSelector(state => state.users.user.firstName)
+
+  const handleSort = () => {
+    dispatch(sortUsersAC(fistName))
+  }
   return (
     <div className={style.searchLine}>
       <div className={style.search}>
@@ -12,7 +21,7 @@ function SearchBar() {
         <Input />
       </div>
       <div className={style.sort}>
-        <Icon icon="material-symbols:sort-rounded" color="#c3c3c6" width="26" height="20" hFlip={true} />
+        <Icon className={style.sortBtn} icon="material-symbols:sort-rounded" width="26" height="20" hFlip={true} onClick={handleSort}/>
       </div>
     </div>
   );

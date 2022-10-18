@@ -19,9 +19,10 @@
     line-height: 20px;
 }
 .button:hover {
-    background-color: rgb(255, 243, 204);
+    cursor: pointer;
+    color: blueviolet;
 } 
 .button.active {
     font-weight: 600;
-    color: #050510;
+    color: blueviolet;
 }

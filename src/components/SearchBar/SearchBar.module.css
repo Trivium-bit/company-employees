@@ -16,3 +16,14 @@
     display: flex;
     align-items: center;
 }
+
+.sortBtn {
+    cursor: pointer;
+    color: #c3c3c6;
+
+}
+.sortBtn:hover {
+    transform: scale(1.05);
+    transition: 0.1s;
+    color:blueviolet;
+}
