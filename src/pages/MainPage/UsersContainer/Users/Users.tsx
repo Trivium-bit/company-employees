@@ -24,18 +24,6 @@ function Users({id, avatarUrl, firstName, lastName, userTag, department, positio
     navigate(`/users/${id}`);
   }
 
-  if (status === 'loading') {
-    return (
-      <div className={style.users}>
-        <div className={style.fotoIsLoading}></div>
-        <div className={style.user}>
-          <div className={style.nameIsLoading}></div>
-          <div className={style.departmentIsLoading}></div>
-        </div>
-      </div>
-    );
-  }
-  else {
     return (
       <div className={style.users} onClick={buttonHandlerRedirect}>
         <img className={style.foto} src={avatarUrl} alt={"ava"} />
@@ -44,8 +32,7 @@ function Users({id, avatarUrl, firstName, lastName, userTag, department, positio
           <div className={style.department}> {department}</div>
         </div>
       </div>
-
     );
   }
-}
+
 export default Users;
