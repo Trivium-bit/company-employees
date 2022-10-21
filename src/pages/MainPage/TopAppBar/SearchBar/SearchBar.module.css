@@ -67,17 +67,11 @@
 }
 
 .closeModal {
-    color: #c7c7c7;
+    color: #cecece;
     width: 24px;
     height: 24px;
 }
 
-.sortBy {
-    padding-bottom: 18px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-    color: #050510;
+.closeModal:hover {
+    color: #6334ffb4;
 }

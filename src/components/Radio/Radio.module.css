@@ -1,0 +1,37 @@
+.radio {
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  outline: none;
+  background: #ffffff;
+  border: 2px solid #6534FF;
+  margin-right: 12px;
+}
+
+.radio:hover {
+  background: #ffffff;
+  border: 6.5px solid #6334ff81;
+}
+
+.radio:checked {
+  background: #ffffff;
+  border: 6.5px solid #6534FF;
+}
+
+.label {
+  display: flex;
+  align-items: flex-end;
+  width: 180px;
+  height: 20px;
+  cursor: pointer;
+  padding-left: 18px;
+  padding-bottom: 16px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #050510;
+}
