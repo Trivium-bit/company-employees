@@ -19,12 +19,23 @@ function SearchBar() {
   return (
     <div className={style.searchLine}>
       <div className={style.search}>
-        <Icon icon="eva:search-fill" color="#c3c3c6" width="20" height="20" />
+        <Icon className={style.searchIcon} icon="eva:search-fill" />
         <Input />
       </div>
       <div className={style.sort}>
-        <Icon className={style.sortBtn} icon="material-symbols:sort-rounded" width="26" height="20" hFlip={true} onClick={() => { setModalActive(true) }} />
-        <Modal active={modalActive} setActive={setModalActive} />
+        <Icon className={style.sortIcon} icon="material-symbols:sort-rounded" hFlip={true} onClick={() => { setModalActive(true) }} />
+
+        <Modal active={modalActive} setActive={setModalActive}>
+          <div className={style.contentModalWindow}>
+            <div className={style.sortModal}>
+              <div className={style.empty}></div>
+              <div className={style.titleModal}>Сортировка</div>
+              <Icon className={style.closeModal} icon="vaadin:close-circle"/>
+              </div>
+              <div className={style.sortBy}>По алфавиту</div>
+              <div className={style.sortBy}>По дню рождения</div>
+          </div>
+        </Modal>
       </div>
     </div>
   );

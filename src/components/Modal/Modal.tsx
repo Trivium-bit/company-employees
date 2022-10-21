@@ -15,9 +15,7 @@ const Modal = ({ active, setActive, children }: ModalPropsType) => {
   return (
     <div className={modalActive} onClick={() => setActive(false)}>
       <div className={modalContentActive} onClick={(e) => e.stopPropagation()}>
-
         {children}
-
       </div>
     </div>
   );
