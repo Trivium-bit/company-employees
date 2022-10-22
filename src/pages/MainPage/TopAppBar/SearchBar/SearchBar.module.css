@@ -33,7 +33,7 @@
 .sortIcon:hover {
     transform: scale(1.05);
     transition: 0.1s;
-    color: blueviolet;
+    color: #6534FF;
 }
 
 .contentModalWindow {

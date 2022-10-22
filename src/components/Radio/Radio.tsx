@@ -1,4 +1,6 @@
 import React, { ChangeEvent, InputHTMLAttributes, DetailedHTMLProps } from "react";
+import { useDispatch } from "react-redux";
+import { sortBirthdayAC, sortNameAC } from "../../redux/users-reducer";
 import s from './Radio.module.css';
 
 type DefaultRadioPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
@@ -17,10 +19,25 @@ const Radio: React.FC<RadioPropsType> = (
         ...restProps
     }
 ) => {
+
+    const dispatch = useDispatch()
+
+    const handleSortName = () => {
+      dispatch(sortNameAC())
+    }
+    const handleSortBirthday = () => {
+        dispatch(sortBirthdayAC())
+      }
+
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
         onChange && onChange(e);
         onChangeOption && onChangeOption(e.currentTarget.value);
         onChangeTheme && onChangeTheme(e.currentTarget.value);
+        if (value === "По алфавиту") {
+            handleSortName()
+        } else if (value === "По дню рождения") {
+            handleSortBirthday()
+        }
     }
 
     const finalRadioClassName = s.radio

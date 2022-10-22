@@ -1,23 +1,16 @@
 import React, { useState } from 'react';
 import style from './SearchBar.module.css'
 import { Icon } from '@iconify/react';
-import { useDispatch } from 'react-redux';
-import { sortNameUpAC } from '../../../../redux/users-reducer';
 import Modal from '../../../../components/Modal/Modal';
 import Radio from '../../../../components/Radio/Radio';
-
-const arrSort = ["По алфавиту", "По дню рождения"];
+import { useAppSelector } from '../../../../redux/store';
 
 const Sort = () => {
 
-  const [modalActive, setModalActive] = useState<boolean>(true)
-  const [value, onChangeOption] = useState(arrSort[1]);
-
-  const dispatch = useDispatch()
-
-  const handleSort = () => {
-    dispatch(sortNameUpAC())
-  }
+  const arrSort = useAppSelector(state => state.users.arrSort);
+  const [modalActive, setModalActive] = useState<boolean>(true);
+  const [value, onChangeOption] = useState(arrSort[0]);
+  let date = new Date()
 
   return (
     <div className={style.sort}>
