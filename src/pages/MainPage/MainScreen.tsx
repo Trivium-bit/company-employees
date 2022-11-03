@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../redux/store';
-import { setUsersTC } from '../../redux/users-reducer';
+import { setUsersTC, sortNameAC } from '../../redux/users-reducer';
 import ErrorPage from './ErrorPage/ErrorPage';
 import style from './UsersContainer/Users/Users.module.css'
 

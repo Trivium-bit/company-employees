@@ -10,7 +10,8 @@ const Sort = () => {
   const arrSort = useAppSelector(state => state.users.arrSort);
   const [modalActive, setModalActive] = useState<boolean>(true);
   const [value, onChangeOption] = useState(arrSort[0]);
-  let date = new Date()
+  let date = new Date().toDateString()
+  console.log(date)
 
   return (
     <div className={style.sort}>

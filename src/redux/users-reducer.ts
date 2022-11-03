@@ -5,23 +5,23 @@ import { AppThunkDispatch } from "./store";
 
 type InitialStateType = {
     users: Array<UserType>
-    user: UserType
     arrSort: Array<string>
 }
 
 const initialState: InitialStateType = {
-    users: [],
-    user: {
-        id: '',
-        avatarUrl: '',
-        firstName: '',
-        lastName: '',
-        userTag: '',
-        department: '',
-        position: '',
-        birthday: '',
-        phone: ''
-    },
+    users: [
+        {
+            id: '',
+            avatarUrl: '',
+            firstName: '',
+            lastName: '',
+            userTag: '',
+            department: '',
+            position: '',
+            birthday: '',
+            phone: ''
+        }
+    ],
     arrSort: ["По алфавиту", "По дню рождения"]
 }
 
