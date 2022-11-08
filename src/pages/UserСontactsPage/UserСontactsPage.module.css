@@ -12,13 +12,14 @@
   flex-direction: column;
 }
 
+
 .backBtn {
   margin: 40px;
   cursor: pointer;
 }
 
 .backBtn:hover {
-  color: blueviolet;
+  color: #6534FF;
   transform: scale(1.2)
 }
 
@@ -62,13 +63,19 @@
   align-items: flex-start;
 }
 
-.age {
+.ageContent {
+display: flex;
+justify-content: space-between;
+
+}
+.dateOfBirthContainer {
   display: flex;
+  margin-top: 10px;
   flex-direction: row;
   padding: 20px;
 }
 
-.birthday {
+.dateOfBirth {
   margin-left: 10px;
   font-family: 'Inter';
   font-style: normal;
@@ -76,6 +83,18 @@
   font-size: 16px;
   line-height: 20px;
   color: #050510;
+}
+.age {
+  display: flex;
+  margin-top: 10px;
+  flex-direction: row;
+  padding: 20px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #8f8f97;
 }
 
 .call {
@@ -92,4 +111,8 @@
   font-size: 16px;
   line-height: 20px;
   color: #050510;
+}
+
+.hr {
+  color: #6334ff31;
 }

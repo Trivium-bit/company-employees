@@ -19,7 +19,11 @@ function UserСontactsPage() {
   const buttonBackHandler = () => {
     navigate(`/`);
   }
+
   const dateToFormat = user?.birthday;
+
+  let reg = /(\+7|8)[\s(]?(\d{3})[\s)]?(\d{3})[\s-]?(\d{2})[\s-]?(\d{2})/g;
+  let phoneNumber = user?.phone.replace(reg, '+7 ($2) $3 $4 $5'); 
 
   return (
 
@@ -34,18 +38,27 @@ function UserСontactsPage() {
       </div>
 
       <div className={style.whiteArea}>
-        <div className={style.age}>
-          <Icon icon="bytesize:star" color="#050510" width="20" height="20" />
-          <div className={style.birthday}>
-            <Moment format="D MMMM YYYY" locale="ru">
-              {dateToFormat}
-            </Moment>
+
+        <div className={style.ageContent}>
+        <div className={style.dateOfBirthContainer}>
+            <Icon icon="bytesize:star" color="#050510" width="20" height="20" />
+            <div className={style.dateOfBirth}>
+              <Moment format="D MMMM YYYY" locale="ru">
+                {dateToFormat}
+              </Moment>
+            </div>
           </div>
-          <div className={style.yearOfBirth}>    </div>
+          <div className={style.age}>  <Moment fromNow ago locale="ru">
+          {dateToFormat}
+              </Moment></div>
+        </div>
+
+        <div>
+          <hr className={style.hr}></hr>
         </div>
         <div className={style.call}>
           <Icon icon="fluent:call-32-regular" color="#050510" width="20" height="20" />
-          <div className={style.phoneNumber}> {user?.phone} </div>
+          <div className={style.phoneNumber}> {phoneNumber} </div>
         </div>
       </div>
     </div>

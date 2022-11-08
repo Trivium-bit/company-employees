@@ -1,6 +1,6 @@
 .users {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding-top: 18px;
 }
 
