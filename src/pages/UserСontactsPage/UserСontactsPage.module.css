@@ -6,12 +6,9 @@
 
 .grayArea {
   background-color: #F7F7F8;
-  width: 100%;
-  min-height: 40vh;
   display: flex;
   flex-direction: column;
 }
-
 
 .backBtn {
   margin: 40px;
@@ -30,6 +27,12 @@
   align-items: center;
   justify-content: space-around;
   height: 200px;
+}
+
+@media screen and (max-width: 420px) {
+  .userDescription {
+    padding-top: 0px;
+  }
 }
 
 .ava {
@@ -64,10 +67,11 @@
 }
 
 .ageContent {
-display: flex;
-justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 
 }
+
 .dateOfBirthContainer {
   display: flex;
   margin-top: 10px;
@@ -84,6 +88,7 @@ justify-content: space-between;
   line-height: 20px;
   color: #050510;
 }
+
 .age {
   display: flex;
   margin-top: 10px;
@@ -111,8 +116,13 @@ justify-content: space-between;
   font-size: 16px;
   line-height: 20px;
   color: #050510;
+  text-decoration: none;
+}
+
+.a :hover {
+  color: #6534FF;
 }
 
 .hr {
-  color: #6334ff31;
+  color: #ac93ff31;
 }

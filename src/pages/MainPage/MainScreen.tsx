@@ -15,8 +15,8 @@ function MainScreen() {
 
 
   useEffect(() => {
-    dispatch(setUsersTC(department, __dynamic))
-  }, [dispatch, department])
+    dispatch(setUsersTC(department, true))
+  }, [dispatch, department, __dynamic])
 
   if (status === 'failed') {
     return (

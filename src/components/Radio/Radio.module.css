@@ -35,3 +35,17 @@
   line-height: 20px;
   color: #050510;
 }
+@media screen and (max-width: 420px) {
+  .label {
+    width: 1460px;
+    height: 16px;
+    cursor: pointer;
+    padding-left: 16px;
+    padding-bottom: 14px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+  }
+}

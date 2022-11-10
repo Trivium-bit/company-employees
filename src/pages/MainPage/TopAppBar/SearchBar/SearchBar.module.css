@@ -1,4 +1,5 @@
 .searchLine {
+    max-width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -9,7 +10,6 @@
     padding-left: 16px;
     padding-right: 16px;
     height: 22px;
-    gap: 10px;
 }
 
 .search {
@@ -45,6 +45,13 @@
     height: 192px;
 }
 
+@media screen and (max-width: 420px) {
+    .contentModalWindow {
+        width: 280px;
+        height: 144px;
+    }
+}
+
 .sortModal {
     display: flex;
     flex-direction: row;
@@ -63,7 +70,14 @@
     font-size: 20px;
     line-height: 24px;
     color: #050510;
+}
 
+@media screen and (max-width: 420px) {
+    .titleModal {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+    }
 }
 
 .closeModal {
