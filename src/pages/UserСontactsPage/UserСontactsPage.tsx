@@ -4,22 +4,19 @@ import { useAppSelector } from '../../redux/store';
 import style from './UserСontactsPage.module.css'
 import Moment from 'react-moment';
 import 'moment/locale/ru';
+import moment from 'moment';
 
 function UserСontactsPage() {
 
   const users = useAppSelector(state => state.users.users);
-
   const { userId } = useParams<string>();
   const user = users.find((u) => u.id === userId)
-
-  //let date = new Date(user?.birthday)
-  //console.log(date)
-
   const navigate = useNavigate();
+
   const buttonBackHandler = () => {
     navigate(`/`);
   }
-
+  const nowDate = new Date()
   const dateToFormat = user?.birthday;
 
   let reg = /(\+7|8)[\s(]?(\d{3})[\s)]?(\d{3})[\s-]?(\d{2})[\s-]?(\d{2})/g;
@@ -38,7 +35,6 @@ function UserСontactsPage() {
       </div>
 
       <div className={style.whiteArea}>
-
         <div className={style.ageContent}>
         <div className={style.dateOfBirthContainer}>
             <Icon icon="bytesize:star" color="#050510" width="20" height="20" />
@@ -48,17 +44,18 @@ function UserСontactsPage() {
               </Moment>
             </div>
           </div>
-          <div className={style.age}>  <Moment fromNow ago locale="ru">
+          <div className={style.age}>  <Moment from={nowDate} ago locale="ru">
           {dateToFormat}
               </Moment></div>
+              
         </div>
-
+        
         <div>
           <hr className={style.hr}></hr>
         </div>
         <div className={style.call}>
           <Icon icon="fluent:call-32-regular" color="#050510" width="20" height="20" />
-          <div className={style.phoneNumber}> {phoneNumber} </div>
+          <span><a className={style.phoneNumber} href={"tel:"+ phoneNumber }>{phoneNumber}</a></span>
         </div>
       </div>
     </div>
