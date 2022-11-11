@@ -32,7 +32,6 @@ const Input: React.FC<SuperInputTextPropsType> = (
     }
     const onKeyPressCallback = (e: KeyboardEvent<HTMLInputElement>) => {
         onKeyPress && onKeyPress(e);
-
         e.key === "Enter"
             && onEnter
             && onEnter();

@@ -1,0 +1,35 @@
+.notFoundPage {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+  height: 56px;
+  width: 62px;
+  margin-bottom: 12px;
+}
+
+.discr {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #050510;
+  margin-bottom: 12px;
+  letter-spacing: 0.6px;
+}
+
+.message {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #97979B;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
