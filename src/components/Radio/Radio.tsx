@@ -35,6 +35,7 @@ const Radio: React.FC<RadioPropsType> = (
         onChangeTheme && onChangeTheme(e.currentTarget.value);
         if (value === "По алфавиту") {
            handleSortBirthday()
+
         } else if (value === "По дню рождения") {
            handleSortName()
         }
