@@ -33,7 +33,7 @@ export const usersReducer = (state: InitialStateType = initialState, action: Use
                 users: action.users.map(u => ({ ...u }))
             }
         }
-        case "FILTER-USERS":
+        case "FIND-USERS":
             return {
                 ...state,
                 users: [...state.users].filter((item) =>
@@ -58,16 +58,16 @@ export const usersReducer = (state: InitialStateType = initialState, action: Use
     }
 }
 
-export type UsersActionsType = SetUsersActionType | FilterUsersActionType | SortNameActionType | SortBirthdayActionType
+export type UsersActionsType = SetUsersActionType | FindUsersActionType | SortNameActionType | SortBirthdayActionType
 
 export type SetUsersActionType = ReturnType<typeof setUsersAC>;
-export type FilterUsersActionType = ReturnType<typeof filterUsersAC>;
+export type FindUsersActionType = ReturnType<typeof findUsersAC>;
 export type SortNameActionType = ReturnType<typeof sortNameAC>;
 export type SortBirthdayActionType = ReturnType<typeof sortBirthdayAC>;
 
 //actionCreater
 export const setUsersAC = (users: Array<UserType>) => ({ type: 'SET-USERS', users } as const);
-export const filterUsersAC = (firstName: string) => ({ type: "FILTER-USERS", firstName } as const)
+export const findUsersAC = (firstName: string) => ({ type: "FIND-USERS", firstName } as const)
 export const sortNameAC = () => ({ type: "SORT-NAME" } as const)
 export const sortBirthdayAC = () => ({ type: "SORT-BIRTHDAY" } as const)
 

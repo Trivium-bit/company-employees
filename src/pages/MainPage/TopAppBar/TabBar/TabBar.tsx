@@ -28,7 +28,7 @@ function TabBar() {
   return (
     <div>
       <div className={style.tabBar}>
-        <button onClick={setAll} className={onAll}>Все</button>
+        <button onClick={setAll} className={onAll}>All</button>
         <button onClick={setDesigners} className={onDesigners}>Designers</button>
         <button onClick={setAnalysts} className={onAnalysts}>Analysts</button>
         <button onClick={setManagers} className={onManagers}>Managers</button>
