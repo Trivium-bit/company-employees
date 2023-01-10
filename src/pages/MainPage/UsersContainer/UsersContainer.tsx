@@ -33,7 +33,6 @@ function UsersContainer() {
       <div className={style.users}>
         {
           filterUsersForDepartment.map(u => {
-            debugger
             return <div key={u.id}>
               <Users
                 avatarUrl={u.avatarUrl}

@@ -60,6 +60,17 @@
   line-height: 16px;
   color: #55555C;
 }
+.position {
+  padding-top: 8px;
+  padding-bottom: 10px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #4b27be;
+
+}
 
 .birthDay {
   display: flex;
