@@ -11,13 +11,17 @@
 }
 
 .backBtn {
-  margin: 40px;
+  height: 26px;
+  width: 26px;
+  margin: 48px;
+  opacity: 0.6;
   cursor: pointer;
 }
 
 .backBtn:hover {
   color: #6534FF;
-  transform: scale(1.2)
+  opacity: 1;
+  transform: scale(1.03)
 }
 
 .userDescription {

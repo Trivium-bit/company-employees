@@ -25,7 +25,7 @@ function UserContactsPage() {
 
     <div className={style.userContactsPage}>
       <div className={style.grayArea}>
-        <Icon icon="dashicons:arrow-left-alt2" className={style.backBtn} onClick={buttonBackHandler} />
+        <Icon icon="mdi:arrow-left-circle-outline" className={style.backBtn} onClick={buttonBackHandler} />
         <div className={style.userDescription}>
           <img className={style.ava} src={user?.avatarUrl} />
           <div className={style.name}>{user?.firstName} {user?.lastName}</div>

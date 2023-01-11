@@ -25,13 +25,13 @@
 
 .sortIcon {
     cursor: pointer;
-    color: #c3c3c6;
+    color: #6534FF;
     width: 26px;
     height: 20px;
 }
 
 .sortIcon:hover {
-    transform: scale(1.05);
+    transform: scale(1.3);
     transition: 0.1s;
     color: #6534FF;
 }
