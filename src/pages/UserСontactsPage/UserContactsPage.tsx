@@ -1,12 +1,11 @@
 import { Icon } from '@iconify/react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAppSelector } from '../../redux/store';
-import style from './UserСontactsPage.module.css'
+import style from './UserContactsPage.module.css'
 import Moment from 'react-moment';
 import 'moment/locale/ru';
-import moment from 'moment';
 
-function UserСontactsPage() {
+function UserContactsPage() {
 
   const users = useAppSelector(state => state.users.users);
   const { userId } = useParams<string>();
@@ -26,11 +25,12 @@ function UserСontactsPage() {
 
     <div className={style.userContactsPage}>
       <div className={style.grayArea}>
-        <Icon icon="dashicons:arrow-left-alt2" className={style.backBtn} onClick={buttonBackHandler} />
+        <Icon icon="mdi:arrow-left-circle-outline" className={style.backBtn} onClick={buttonBackHandler} />
         <div className={style.userDescription}>
           <img className={style.ava} src={user?.avatarUrl} />
           <div className={style.name}>{user?.firstName} {user?.lastName}</div>
           <div className={style.department}>{user?.department}</div>
+          <div className={style.position}> {user?.position}</div>
         </div>
       </div>
 
@@ -62,4 +62,4 @@ function UserСontactsPage() {
   );
 }
 
-export default UserСontactsPage;
+export default UserContactsPage;

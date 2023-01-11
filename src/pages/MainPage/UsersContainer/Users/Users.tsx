@@ -28,6 +28,7 @@ function Users({id, avatarUrl, firstName, lastName, userTag, department, positio
         <div className={style.user}>
           <div className={style.name}> {firstName} {lastName} </div>
           <div className={style.department}> {department}</div>
+          <div className={style.position}> {position}</div>
         </div>
       </div>
     );
