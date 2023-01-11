@@ -1,7 +1,7 @@
 import { Icon } from '@iconify/react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAppSelector } from '../../redux/store';
-import style from './UserСontactsPage.module.css'
+import style from './UserContactsPage.module.css'
 import Moment from 'react-moment';
 import 'moment/locale/ru';
 

@@ -4,7 +4,7 @@ import './App.css'
 import ErrorPage from './pages/MainPage/ErrorPage/ErrorPage';
 
 import MainPage from './pages/MainPage/MainPage';
-import UserСontactsPage from './pages/UserСontactsPage/UserСontactsPage';
+import UserСontactsPage from './pages/UserСontactsPage/UserContactsPage';
 
 export const PATH = {
   MAIN_PAGE: "/",
